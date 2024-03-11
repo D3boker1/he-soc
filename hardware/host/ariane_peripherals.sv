@@ -212,8 +212,8 @@ module ariane_peripherals
       .NR_SRC     ( ariane_soc::NumSources          ),    
       .MIN_PRIO   ( ariane_soc::MaxPriority         ),      
       .NR_IDCs    ( ariane_soc::NumCVA6             ),      
-      .reg_req_t  ( reg_intf::reg_intf_resp_d32     ),        
-      .reg_rsp_t  ( reg_intf::reg_intf_req_a32_d32  )          
+      .reg_req_t  ( reg_intf::reg_intf_req_a32_d32  ),        
+      .reg_rsp_t  ( reg_intf::reg_intf_resp_d32     )          
     ) i_aplic (
       .i_clk          ( clk_i                       ),
       .ni_rst         ( rst_ni                      ),
