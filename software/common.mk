@@ -65,7 +65,7 @@ dis:
 	$(RISCV_OBJDUMP) $(APP).riscv > $(APP).dump
 
 dump:
-	$(SW_HOME)/elf_to_slm.py --binary=$(APP).riscv --vectors=hyperram0.slm
+	python3 $(SW_HOME)/elf_to_slm.py --binary=$(APP).riscv --vectors=hyperram0.slm
 	cp hyperram*.slm  $(HW_HOME)/
 	cp $(APP).riscv  $(HW_HOME)/
 	echo $(APP).riscv | tee -a  $(HW_HOME)/regression.list
