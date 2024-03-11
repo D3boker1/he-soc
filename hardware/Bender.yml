@@ -5,7 +5,7 @@ package:
 
 dependencies:
   clint: { path: "deps/clint" }
-  rv_plic: { path: "deps/rv_plic" }
+  riscv-aia: { path: "deps/riscv-aia" }
   util: { path: "deps/util" }
   alsaqr_padframe: { path: "deps/alsaqr_periph_padframe" }
   alsaqr_fpga_padframe: { path: "deps/alsaqr_periph_fpga_padframe" }
