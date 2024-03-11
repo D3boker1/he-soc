@@ -45,6 +45,7 @@ hardware/fpga/alsaqr/alsaqr.xpr
 hardware/fpga/alsaqr/tcl/generated/
 hardware/fpga/alsaqr/*.gen
 hardware/fpga/alsaqr/tcl/ips/ddr/ddr4_0.cache/
+hardware/fpga/alsaqr/tcl/ips/ddr/ddr4_0.gen/
 hardware/fpga/alsaqr/tcl/ips/ddr/ddr4_0.hw/
 hardware/fpga/alsaqr/tcl/ips/ddr/ddr4_0.ip_user_files/
 hardware/fpga/alsaqr/tcl/ips/ddr/ddr4_0.runs/
@@ -53,12 +54,14 @@ hardware/fpga/alsaqr/tcl/ips/ddr/ddr4_0.xpr
 hardware/fpga/alsaqr/tcl/ips/ddr/ip/
 hardware/fpga/alsaqr/tcl/ips/otp_ot/ip/
 hardware/fpga/alsaqr/tcl/ips/otp_ot/xilinx_rom_bank_1024x22.cache/
+hardware/fpga/alsaqr/tcl/ips/otp_ot/xilinx_rom_bank_1024x22.gen/
 hardware/fpga/alsaqr/tcl/ips/otp_ot/xilinx_rom_bank_1024x22.hw/
 hardware/fpga/alsaqr/tcl/ips/otp_ot/xilinx_rom_bank_1024x22.runs/
 hardware/fpga/alsaqr/tcl/ips/otp_ot/xilinx_rom_bank_1024x22.srcs/
 hardware/fpga/alsaqr/tcl/ips/otp_ot/xilinx_rom_bank_1024x22.xpr
 hardware/fpga/alsaqr/tcl/ips/qspi/ip/
 hardware/fpga/alsaqr/tcl/ips/qspi/xilinx_qspi.cache/
+hardware/fpga/alsaqr/tcl/ips/qspi/xilinx_qspi.gen/
 hardware/fpga/alsaqr/tcl/ips/qspi/xilinx_qspi.hw/
 hardware/fpga/alsaqr/tcl/ips/qspi/xilinx_qspi.ip_user_files/
 hardware/fpga/alsaqr/tcl/ips/qspi/xilinx_qspi.runs/
@@ -66,6 +69,7 @@ hardware/fpga/alsaqr/tcl/ips/qspi/xilinx_qspi.srcs/
 hardware/fpga/alsaqr/tcl/ips/qspi/xilinx_qspi.xpr
 hardware/fpga/alsaqr/tcl/ips/rom_ot/ip/
 hardware/fpga/alsaqr/tcl/ips/rom_ot/xilinx_rom_bank_8192x40.cache/
+hardware/fpga/alsaqr/tcl/ips/rom_ot/xilinx_rom_bank_8192x40.gen/
 hardware/fpga/alsaqr/tcl/ips/rom_ot/xilinx_rom_bank_8192x40.hw/
 hardware/fpga/alsaqr/tcl/ips/rom_ot/xilinx_rom_bank_8192x40.runs/
 hardware/fpga/alsaqr/tcl/ips/rom_ot/xilinx_rom_bank_8192x40.srcs/
