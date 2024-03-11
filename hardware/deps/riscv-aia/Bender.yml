@@ -5,9 +5,10 @@ package:
     - "Francisco Marques <fmarques_00@protonmail.com>"
     
 sources:
-  - rtl/aplic/aplic_domain_gateway.sv
-  - rtl/aplic/aplic_domain_notifier.sv
-  - rtl/aplic/aplic_regmap_32_2.sv
-  - rtl/aplic/aplic_domain_regctl.sv
-  - rtl/aplic/aplic_domain_top.sv
-  - rtl/aplic/aplic_top.sv
+  - vendor/reg_intf_pkg.sv
+  - rtl/aplic/minimal/aplic_domain_gateway.sv
+  - rtl/aplic/minimal/aplic_domain_notifier.sv
+  - rtl/aplic/minimal/aplic_regmap_32_2.sv
+  - rtl/aplic/minimal/aplic_domain_regctl.sv
+  - rtl/aplic/minimal/aplic_domain_top.sv
+  - rtl/aplic/minimal/aplic_top.sv
