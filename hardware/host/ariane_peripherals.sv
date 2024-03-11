@@ -80,26 +80,26 @@ module ariane_peripherals
     // ---------------
     logic [ariane_soc::NumSources-1:0] irq_sources;
 
-    assign irq_sources[7]                            = c2h_irq_i;
-    assign irq_sources[8]                            = cluster_eoc_i;
-    assign irq_sources[9]                            = irq_mbox_i;
-    assign irq_sources[14:10]                        = '0; // reserved for future use
-    assign irq_sources[138:15]                       = udma_evt_i[123:0];
-    assign irq_sources[139]                          = cl_dma_pe_evt_i;
-    assign irq_sources[140]                          = can_irq_i[0];
-    assign irq_sources[141]                          = can_irq_i[1];
+    // assign irq_sources[7]                            = c2h_irq_i;
+    // assign irq_sources[8]                            = cluster_eoc_i;
+    // assign irq_sources[9]                            = irq_mbox_i;
+    // assign irq_sources[14:10]                        = '0; // reserved for future use
+    // assign irq_sources[138:15]                       = udma_evt_i[123:0];
+    // assign irq_sources[139]                          = cl_dma_pe_evt_i;
+    // assign irq_sources[140]                          = can_irq_i[0];
+    // assign irq_sources[141]                          = can_irq_i[1];
 
-    // Interrupt CH0 from 8 APB TIMERS
-    assign irq_sources[142]                          = pwm_irq_i[0];
-    assign irq_sources[143]                          = pwm_irq_i[1];
-    assign irq_sources[144]                          = pwm_irq_i[2];
-    assign irq_sources[145]                          = pwm_irq_i[3];
-    assign irq_sources[146]                          = pwm_irq_i[4];
-    assign irq_sources[147]                          = pwm_irq_i[5];
-    assign irq_sources[148]                          = pwm_irq_i[6];
-    assign irq_sources[149]                          = pwm_irq_i[7];
+    // // Interrupt CH0 from 8 APB TIMERS
+    // assign irq_sources[142]                          = pwm_irq_i[0];
+    // assign irq_sources[143]                          = pwm_irq_i[1];
+    // assign irq_sources[144]                          = pwm_irq_i[2];
+    // assign irq_sources[145]                          = pwm_irq_i[3];
+    // assign irq_sources[146]                          = pwm_irq_i[4];
+    // assign irq_sources[147]                          = pwm_irq_i[5];
+    // assign irq_sources[148]                          = pwm_irq_i[6];
+    // assign irq_sources[149]                          = pwm_irq_i[7];
 
-    assign irq_sources[ariane_soc::NumSources-1:150] = '0;
+    assign irq_sources[ariane_soc::NumSources-1:7] = '0;
 
     REG_BUS #(
         .ADDR_WIDTH ( 32 ),
@@ -208,18 +208,19 @@ module ariane_peripherals
     assign reg_bus.error = plic_resp.error;
     assign reg_bus.ready = plic_resp.ready;
 
-    plic_top #(
-      .N_SOURCE    ( ariane_soc::NumSources  ),
-      .N_TARGET    ( ariane_soc::NumTargets  ),
-      .MAX_PRIO    ( ariane_soc::MaxPriority )
-    ) i_plic (
-      .clk_i,
-      .rst_ni,
-      .req_i         ( plic_req    ),
-      .resp_o        ( plic_resp   ),
-      .le_i          ( '0          ), // 0:level 1:edge
-      .irq_sources_i ( irq_sources ),
-      .eip_targets_o ( irq_o       )
+    aplic_top #(
+      .NR_SRC     ( ariane_soc::NumSources          ),    
+      .MIN_PRIO   ( ariane_soc::MaxPriority         ),      
+      .NR_IDCs    ( ariane_soc::NumCVA6             ),      
+      .reg_req_t  ( reg_intf::reg_intf_resp_d32     ),        
+      .reg_rsp_t  ( reg_intf::reg_intf_req_a32_d32  )          
+    ) i_aplic (
+      .i_clk          ( clk_i                       ),
+      .ni_rst         ( rst_ni                      ),
+      .i_irq_sources  ( {irq_sources, 1'b0}         ),       
+      .i_req_cfg      ( plic_req                    ),
+      .o_resp_cfg     ( plic_resp                   ),
+      .o_Xeip_targets ( irq_o                       )   
     );
 
     // ---------------

@@ -23,8 +23,8 @@ package ariane_soc;
   // M-Mode Hart, S-Mode Hart
   localparam int unsigned NumTargets = 2*NumCVA6;
   // Uart, SPI, Ethernet, reserved
-  localparam int unsigned NumSources = 255;
-  localparam int unsigned MaxPriority = 7;
+  localparam int unsigned NumSources = 32;
+  localparam int unsigned MaxPriority = 6;
 
   localparam NrSlaves = 6; // actually masters, but slaves on the crossbar: Debug module, CVA6, Cluster, uDMA (tx + rx)
 
