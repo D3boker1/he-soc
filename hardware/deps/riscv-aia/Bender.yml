@@ -6,9 +6,11 @@ package:
     
 sources:
   - vendor/reg_intf_pkg.sv
-  - rtl/aplic/minimal/aplic_domain_gateway.sv
-  - rtl/aplic/minimal/aplic_domain_notifier.sv
-  - rtl/aplic/minimal/aplic_regmap_32_2.sv
-  - rtl/aplic/minimal/aplic_domain_regctl.sv
-  - rtl/aplic/minimal/aplic_domain_top.sv
-  - rtl/aplic/minimal/aplic_top.sv
+  - rtl/ieaia/aplic_domain_gateway.sv
+  - rtl/ieaia/imsic_regmap.sv
+  - rtl/ieaia/imsic_top.sv
+  - rtl/ieaia/aplic_domain_notifier.sv
+  - rtl/ieaia/aplic_regmap_32_2.sv
+  - rtl/ieaia/aplic_domain_regctl.sv
+  - rtl/ieaia/aplic_domain_top.sv
+  - rtl/ieaia/aplic_top.sv
