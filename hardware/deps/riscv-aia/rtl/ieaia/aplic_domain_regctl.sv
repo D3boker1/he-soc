@@ -317,27 +317,6 @@ logic [NR_DOMAINS-1:0][NR_IDCs:0][1:0]              iforce_ctl;
     .o_genmsi_we            (),
     .o_genmsi_re            (),
 `else
-    // Register: idelivery
-    .i_idelivery            (),
-    .o_idelivery            (),
-    .o_idelivery_we         (),
-    .o_idelivery_re         (),
-    // Register: iforce
-    .i_iforce               (),
-    .o_iforce               (),
-    .o_iforce_we            (),
-    .o_iforce_re            (),
-    // Register: ithreshold
-    .i_ithreshold           (),
-    .o_ithreshold           (),
-    .o_ithreshold_we        (),
-    .o_ithreshold_re        (),
-    // Register: topi
-    .i_topi                 (),
-    .o_topi_re              (),
-    // Register: claimi
-    .i_claimi               (),
-    .o_claimi_re            (),
     // Register: genmsi
     .i_genmsi               ( genmsi_q          ),
     .o_genmsi               ( genmsi_o          ),
