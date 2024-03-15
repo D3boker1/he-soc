@@ -193,8 +193,7 @@ logic [NR_IMSICS-1:0][31:0] target_intp;
             if (i_aplic_imsic_en[i] == 1'b1) begin
                 target_register[i] = {{32-NR_BITS_SRC{1'b0}}, i_aplic_setipnum}/32;
                 target_intp[i]     = {{32-NR_BITS_SRC{1'b0}}, i_aplic_setipnum}%32;
-                eip_d[i][target_register+(i_aplic_select_file*NR_REG)]
-                        [target_intp] = 1'b1;
+                eip_d[i][target_register[i]+(i_aplic_select_file*NR_REG)][target_intp[i]] = 1'b1;
             end
 
             /** If a core is claiming the intp, unpend it */
