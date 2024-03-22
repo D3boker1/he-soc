@@ -61,7 +61,7 @@ module cva6_synth_wrap
   input   logic [ariane_soc::NumCVA6-1:0]                                                          imsic_exception_i ,
   input   logic [ariane_soc::NumCVA6-1:0][ariane_pkg::NrIntpFiles-1:0][ariane_pkg::NrSourcesW-1:0] imsic_xtopei_i    ,
   // Interrupt inputs
-  input  logic [ariane_soc::NumCVA6-1:0][ariane_soc::NrIntpFiles-1:0] irq_i, // level sensitive IR lines, mip & sip (async)
+  input  logic [ariane_soc::NumCVA6-1:0][ariane_pkg::NrIntpFiles-1:0] irq_i, // level sensitive IR lines, mip & sip (async)
   input  logic [ariane_soc::NumCVA6-1:0]      ipi_i,        // inter-processor interrupts (async)
   // Timer facilities
   input  logic [ariane_soc::NumCVA6-1:0]      time_irq_i,   // timer interrupt in (async)
